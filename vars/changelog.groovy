@@ -6,7 +6,7 @@ def call() {
     echo "Gathering SCM changes"
     currentBuild.changeSets.each {
         changeSet ->
-            ${changeSet}.items.each {
+            changeSet.items.each {
                 item ->
                     changelog += " - ${item.msg.take[MAX_MSG_LEN]} [${item.author}]\n"
             }
