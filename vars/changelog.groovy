@@ -1,6 +1,5 @@
 // vars/changelog.groovy
 def call() {
-    MAX_MSG_LEN = 100
     def changelog = ""
 
     echo "Gathering SCM changes"
@@ -8,7 +7,7 @@ def call() {
         changeSet ->
             changeSet.items.each {
                 item ->
-                    changelog += " - ${item.msg.take[MAX_MSG_LEN]} [${item.author}]\n"
+                    changelog += " - ${item.msg.split('\n')[0]} [${item.author}]\n"
             }
     }
 
