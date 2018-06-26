@@ -7,7 +7,7 @@ def call() {
         changeSet ->
             changeSet.items.each {
                 item ->
-                    changelog += " - ${item.msg.split('\n')[0]} [@${item.author}]\n"
+                    changelog += " - ${item.msg.split('\n')[0]} [${item.author}]\n"
             }
     }
 
